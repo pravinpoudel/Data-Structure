@@ -2,6 +2,8 @@ Problem:
 
 Find number of pairs that can make sum k
 
+https://jsfiddle.net/no2erzyq/1/
+
 ```javascript
 let a = [1, 3, 3, 5, 5, 5, 7, 9]
 let k = 10
