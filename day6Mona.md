@@ -27,3 +27,30 @@ var minCost = function(colors, neededTime) {
     return totalTime;
 };
 ```
+### by two pointer method
+
+```javascript
+var minCost = function(colors, neededTime) {
+    let start = 0
+    let end = 1
+    let totalTime = 0
+    while(end<colors.length){
+        if(colors[start] == colors[end]){
+            if(neededTime[start] > neededTime[end]){
+                totalTime += neededTime[end]
+                end += 1 
+            }
+            else{
+                totalTime += neededTime[start]
+                start = end;
+                end = start + 1
+            }
+        }
+        else{
+            start = end;
+            end = start + 1
+        }
+    }
+    return totalTime
+};
+```
