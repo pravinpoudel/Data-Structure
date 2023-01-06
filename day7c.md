@@ -1,6 +1,6 @@
 ### Find index of continous subarray sum in sorted array
 
-```
+```javascript
 /**
  * @param {number[]} nums
  * @param {number} k
