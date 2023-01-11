@@ -91,3 +91,9 @@ var lengthOfLongestSubstring = function(s) {
     return maxSize
 };
 ```
+
+1. we are not counting the element and adding any value for length starting pointer is there to maintain one boundary at start
+2. start and end start at starting pointer not at 0 and 1, why ?? because starting pointer is not to compare the value with end pointer or add a value to some place
+ it's only job is anchor position so you can put start = 0 and end =0 because you are comparing value in process with map/object 
+3. put if else condition to check pointer position change like when you need to change your anchor. your constant job is moving end so you can put end+1 after that
+4. remove or comment the console 
