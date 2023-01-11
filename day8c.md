@@ -54,3 +54,40 @@ function countFrequency(arr){
     return maxFreq
 }
 ```
+
+### This is a code after proper usage and this has many points using leverage of two pointer to simplify code abhove and get output
+
+``` javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    if(s == null){
+        return 0
+    }
+    if(s.length == 1){
+        return s.length
+    }
+    let start = 0
+    let end = 0
+    let maxSize = 0
+    let stringMap = {}
+    while(end<s.length){
+        if(stringMap.hasOwnProperty(s[end])){
+            newStart = stringMap[s[end]] + 1
+            for(let i=start; i<=stringMap[s[end]]; i++){
+                delete stringMap[s[i]]
+            }
+            start = newStart
+            stringMap[s[end]] = end
+        }
+        else{
+            stringMap[s[end]] = end
+        }
+        maxSize = Math.max(maxSize, (end-start + 1))
+        end += 1
+    }
+    return maxSize
+};
+```
