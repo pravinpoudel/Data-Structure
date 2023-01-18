@@ -25,6 +25,7 @@ var searchMatrix = function(matrix, target) {
             return true
         }
         if(matrix[x][y]>target){
+            // return false;
             direction = [[x-1, y], [x, y-1]]
         }
         else{
@@ -33,11 +34,11 @@ var searchMatrix = function(matrix, target) {
         for(let i=0, _length = direction.length; i<_length; i++){
             if(direction[i][0]>=0 && direction[i][1] >=0 && direction[i][0]<=(rows-1) && direction[i][1]<=(cols-1)){
                 if(!visited[direction[i][0]][direction[i][1]]){
+                    visited[direction[i][0]][direction[i][1]] = true
                     queue.push(direction[i])
                 }
             }
         }
     }
     return false
-};
-```
+};```
