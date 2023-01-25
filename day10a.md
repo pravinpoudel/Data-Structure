@@ -51,3 +51,31 @@ You could have just made a condition where slow pointer or left pointer would en
 
 This code passed the test but the problem is that we have to iterate over the link list twice whereas we can do it
 in first time using left and right pointer at a distance of n moving a step at a time.
+
+### optimal 
+```javascript
+var removeNthFromEnd = function(head, n) {
+    //find the length of the link list
+    if(head.next == null){
+        return null
+    }
+   let left = head
+   let right = head
+   let count = 0
+   while(count != n){
+       right = right.next
+       count += 1
+   }
+   if(right == null){
+       return head.next
+   }
+   let temp
+   while(right != null){
+       temp = left
+       left = left.next
+       right = right.next
+   }
+   temp.next = left.next
+   return head
+};
+```
